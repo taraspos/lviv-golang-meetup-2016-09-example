@@ -20,7 +20,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		str := fmt.Sprintf("Hello, %q", html.EscapeString(r.URL.Path))
+		str := fmt.Sprintf("Hi, %q", html.EscapeString(r.URL.Path))
 		fmt.Fprintf(w, str)
 		log.Println(str)
 	})
