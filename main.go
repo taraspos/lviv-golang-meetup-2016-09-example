@@ -9,7 +9,7 @@ import (
 )
 
 type configuration struct {
-	Listen string `default:"9090" envconfig:"http_platform_port"`
+	Listen string `default:"5000" envconfig:"http_platform_port"`
 }
 
 func main() {
