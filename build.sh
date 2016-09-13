@@ -5,6 +5,7 @@ export GO15VENDOREXPERIMENT=1 \
   && mkdir -p $GOPATH/bin \
   && mkdir -p $GOPATH/src/app \
   && mv *.{go,yaml,lock} $GOPATH/src/app/ \
+  && mv vendor/ $GOPATH/src/app/ \
   && cd $GOPATH/src/app/ \
   && $GOPATH/bin/glide install \
   && go build -a -o $GOPATH/bin/application
