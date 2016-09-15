@@ -20,7 +20,7 @@
 
 - Install azure-cli with npm:
 
-      sudo npm install -g azure-cli
+        sudo npm install -g azure-cli
 
 - Login to the console with:
 
@@ -28,15 +28,15 @@
 
 - Create resource group:
 
-      azure group create -n golang-example -l westeurope
+        azure group create -n golang-example -l westeurope
 
 - Create Service Plan:
 
-      azure appserviceplan create -n webapp-test -g golang-example -l  westeurope --tier S1
+        azure appserviceplan create -n webapp-test -g golang-example -l  westeurope --tier S1
 
 - Create webapp:
 
-      azure webapp create golang-example golang-webapp westeurope webapp-test
+        azure webapp create golang-example golang-webapp westeurope webapp-test
 
 
 
