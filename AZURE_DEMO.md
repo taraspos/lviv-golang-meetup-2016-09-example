@@ -24,7 +24,7 @@
 
 - Login to the console with:
 
-      azure login
+        azure login
 
 - Create resource group:
 
