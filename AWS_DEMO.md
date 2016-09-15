@@ -1,42 +1,55 @@
-# Microsoft Azure Demo
+# AWS
 
-## Create Golang AppService as Microsoft Azure WebService
+## Create Golang AppService as AWS Elastic Beanstalk Application
 
-### Azure Portal [AppService page](https://portal.azure.com/#create/Microsoft.WebSite)
+### Amazon Console [Elastic Beanstalk page](http://console.aws.amazon.com/elasticbeanstalk/)
 
-- Add new WebApp
+- Create new app
 
-    ![](static/azure/1-add-webapp.png)
+    ![](static/aws/1-create-app.png)
 
-- Configure WebApp:
-  - Choose Web App name
-  - Choose or create new Resource Group
-  - Choose or create new Service Plan
-  - Enable/Disable App Insights(not works for Golang apps)
+  - Set service name and description
+  - Create web server environment
+  - Choose Go language(current version 1.5)
+  - Select application:
+    - Sample App
+    - From S3 bucket
+    - Upload zip file (more details on the next slides)
+  - Configure deployment preferences
+  - Configure environment(name, url)
+  - Additional resources(Network, DB connection)
+  - Instance configuration(size, SSH key, notifications, health-check…)
+  - Configure tags
+  - VPC
+  - Permissios(IAM role)
 
-    ![](static/azure/2-configure-webapp.png)
 
-### Azure CLI
+### Elastic Beanstalk CLI
 
-- Install azure-cli with npm:
+- Install eb-cli with:
 
-        sudo npm install -g azure-cli
+        pip install awsebcli
 
-- Login to the console with:
+- Init eb project with:
 
-        azure login
+        eb init
 
-- Create resource group:
+- Follow next prompts to:
+  - set region
+  - set aws credentials
+  - choose application name
+  - choose programming language environment
+  - choose programming language version
+  - setup ssh
 
-        azure group create -n golang-example -l westeurope
+- Create environment with:
 
-- Create Service Plan:
+        eb create {env name}
 
-        azure appserviceplan create -n webapp-test -g golang-example -l  westeurope --tier S1
+- Deploy new application version:
 
-- Create webapp:
+        eb deploy {env name}
 
-        azure webapp create golang-example golang-webapp westeurope webapp-test
 
 
 
