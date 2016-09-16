@@ -86,15 +86,12 @@ IF NOT EXIST "%GOROOT%" (
   )
 )
 ECHO GOROOT %GOROOT%
-ECHO "lalalla"
 :: Create Go workspace in DEPLOYMENT_TEMP
 ::      DEPLOYMENT_TEMP\bin, DEPLOYMENT_TEMP\pkg, DEPLOYMENT_TEMP\src
 SET GOPATH=%DEPLOYMENT_TEMP%\gopath
 SET GOEXE="%GOROOT%\bin\go.exe"
 SET FOLDERNAME=azureapp
 SET GOAZUREAPP=%DEPLOYMENT_TEMP%\gopath\src\%FOLDERNAME%
-SET PATH="%PATH%;%GOROOT%\bin"
-ECHO PATH %PATH%
 IF NOT EXIST %GOEXE% (
   ECHO go.exe not found!
   goto error
@@ -129,7 +126,8 @@ IF NOT EXIST %GLIDEEXE% (
   ECHO glide.exe not found!
   goto error
 )
-
+SET PATH="%PATH%%GOROOT%\bin"
+ECHO %PATH%
 %GLIDEEXE% install
 
 ECHO Building Go app to produce exe file
