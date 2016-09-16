@@ -128,7 +128,7 @@ IF NOT EXIST %GLIDEEXE% (
 )
 SET PATH="%PATH%%GOROOT%\bin"
 ECHO %PATH%
-%GLIDEEXE% install
+%GLIDEEXE% --debug install
 
 ECHO Building Go app to produce exe file
 %GOEXE% build -o "%DEPLOYMENT_SOURCE%\%FOLDERNAME%.exe" %FOLDERNAME%
