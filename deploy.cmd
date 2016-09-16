@@ -124,6 +124,12 @@ ECHO Installing glide
 %GOEXE% get "github.com/Masterminds/glide"
 ECHO Resolving dependencies
 SET GLIDEEXE="%GOPATH%\bin\glide.exe"
+
+IF NOT EXIST %GLIDEEXE% (
+  ECHO glide.exe not found!
+  goto error
+)
+
 %GLIDEEXE% install
 
 ECHO Building Go app to produce exe file
