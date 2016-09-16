@@ -118,11 +118,10 @@ ROBOCOPY "%DEPLOYMENT_SOURCE%" "%GOAZUREAPP%" /E /NFL /NDL /NP /XD .git .hg /XF 
 
 PUSHD "%GOAZUREAPP%"
 SET GOBIN="%GOROOT%\bin"
-SET GOEXE=".exe"
 ECHO Installing glide
 %GOEXE% get "github.com/Masterminds/glide"
 ECHO Resolving dependencies
-SET GLIDEEXE="%GOPATH%\bin\glide.exe"
+SET GLIDEEXE="%GOBIN%\glide.exe"
 
 IF NOT EXIST %GLIDEEXE% (
   ECHO glide.exe not found!
