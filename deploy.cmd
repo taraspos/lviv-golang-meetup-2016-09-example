@@ -93,6 +93,7 @@ SET GOPATH=%DEPLOYMENT_TEMP%\gopath
 SET GOEXE="%GOROOT%\bin\go.exe"
 SET FOLDERNAME=azureapp
 SET GOAZUREAPP=%DEPLOYMENT_TEMP%\gopath\src\%FOLDERNAME%
+$env:Path += ";%GOROOT%"
 
 IF NOT EXIST %GOEXE% (
   ECHO go.exe not found!
