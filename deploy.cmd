@@ -130,6 +130,7 @@ IF NOT EXIST %GLIDEEXE% (
   goto error
 )
 
+ECHO %PATH%
 %GLIDEEXE% install
 
 ECHO Building Go app to produce exe file
