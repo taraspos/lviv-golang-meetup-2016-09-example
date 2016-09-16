@@ -117,6 +117,8 @@ ECHO Copy source code to Go workspace
 ROBOCOPY "%DEPLOYMENT_SOURCE%" "%GOAZUREAPP%" /E /NFL /NDL /NP /XD .git .hg /XF .deployment deploy.cmd
 
 PUSHD "%GOAZUREAPP%"
+SET GOBIN="%GOROOT%\bin"
+SET GOEXE=".exe"
 ECHO Installing glide
 %GOEXE% get "github.com/Masterminds/glide"
 ECHO Resolving dependencies
@@ -127,6 +129,7 @@ IF NOT EXIST %GLIDEEXE% (
   goto error
 )
 SET PATH="%PATH%%GOROOT%\bin"
+go.exe version
 ECHO %PATH%
 %GLIDEEXE% --debug install
 
