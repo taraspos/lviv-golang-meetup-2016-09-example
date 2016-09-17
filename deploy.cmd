@@ -120,7 +120,7 @@ PUSHD "%GOAZUREAPP%"
 ECHO Installing glide
 %GOEXE% get "github.com/Masterminds/glide"
 ECHO Resolving dependencies
-SET GLIDEEXE="%GOBIN%\glide.exe"
+SET GLIDEEXE="%GOPATH%\bin\glide.exe"
 
 IF NOT EXIST %GLIDEEXE% (
   ECHO glide.exe not found!
