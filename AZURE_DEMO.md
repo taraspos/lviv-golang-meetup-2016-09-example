@@ -12,7 +12,7 @@
   - Choose Web App name
   - Choose or create new Resource Group
   - Choose or create new Service Plan
-  - Enable/Disable App Insights(not works for Golang apps)
+  - Enable/Disable App Insights(does not support Golang apps)
 
     ![](static/azure/2-configure-webapp.png)
 
@@ -58,7 +58,7 @@
     ![](static/azure/4-deployment-slots.png)
 
 
-## Additional tweaking
+## Additional tweaks
 
 - Application environment variables can be set via:
 
@@ -68,7 +68,7 @@
   - Attach VMs network interfaces to that VirtualNetwork
   - Create Virtual Network Gateway for WebService
   - Attach Virtual Network Gateway to the WebService
-- Connection to databases or storage blobs could be done via: 
+- Connection to the databases or storage blobs can be set via: 
 
    *App Services* **->** *{WebServiceName}* **->** *Data Connections*
 - Exploring WebService guts could be done via:
